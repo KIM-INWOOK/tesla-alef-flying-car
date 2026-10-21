@@ -167,7 +167,13 @@
     .flight-chapter h3 { margin:10px 0 10px; font:500 clamp(23px,2.4vw,32px)/1.5 var(--serif); }
     .flight-chapter p { margin:0; color:var(--body-copy); font-size:16px; line-height:2.1; letter-spacing:.01em; }
     .chapter-index { color:var(--accent); font-size:10px; letter-spacing:.15em; margin-bottom:16px; }
-    .flight-lab + .spacex-reference { margin-top:50px; }
+    .spacex-reference { grid-column:1/-1; display:grid; grid-template-columns:.85fr 1.15fr; align-items:center; gap:28px; padding:28px; border:1px solid rgba(255,116,122,.24); background:linear-gradient(120deg,#262226,#17191d); }
+    .spacex-reference h3 { margin:10px 0 12px; font:500 clamp(24px,3vw,38px)/1.5 var(--serif); letter-spacing:-.04em; }
+    .spacex-reference p { color:var(--body-copy); font-size:15px; line-height:2; margin:0; }
+    .spacex-photo { margin:0; min-width:0; }
+    .spacex-photo img { display:block; width:100%; height:auto; border:1px solid var(--line); }
+    .spacex-photo figcaption { margin-top:10px; color:var(--muted); font-size:12px; line-height:1.8; }
+    .spacex-photo a { color:var(--link); text-underline-offset:3px; }
     .mech-card { position:relative; border:1px solid var(--line); background:linear-gradient(150deg,#202629,#15191b 70%); padding:28px; min-height:470px; overflow:hidden; }
     .mech-card.tesla { --accent:var(--tesla-accent); }
     .mech-card.alef { --accent:var(--alef-accent); }
@@ -178,15 +184,6 @@
     .mech-card .mech-story + .mech-story { margin-top:10px; }
     .diagram { width:100%; height:245px; margin-top:32px; }
     .mech-card .flow { stroke:var(--accent); fill:none; stroke-width:2.5; stroke-dasharray:8 8; animation:flow 2.4s linear infinite; }
-    .spacex-reference { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:24px; padding:28px; border:1px solid rgba(255,116,122,.24); background:linear-gradient(120deg,#262226,#17191d); }
-    .spacex-reference-copy { align-self:center; }
-    .spacex-reference-copy h3 { margin:10px 0 12px; font:500 clamp(24px,3vw,38px)/1.5 var(--serif); letter-spacing:-.04em; }
-    .spacex-reference-copy p { color:var(--body-copy); font-size:16px; line-height:2.05; letter-spacing:.008em; margin:0 0 18px; }
-    .spacex-media { min-width:0; }
-    .spacex-official-frame { position:relative; width:100%; aspect-ratio:16/9; min-height:300px; overflow:hidden; background:#090b0c; border:1px solid var(--line); }
-    .spacex-official-frame iframe { position:absolute; inset:0; display:block; width:100%; height:100%; border:0; }
-    .media-caption { margin:12px 0 0; color:var(--muted); font-size:13px; line-height:1.9; letter-spacing:.005em; }
-    .media-caption a { color:var(--link); text-underline-offset:3px; }
     @media (prefers-reduced-motion: reduce) {
       .meme-media video { display:none; }
     }
@@ -272,9 +269,9 @@
       .flight-chapter { padding:21px; }
       .flight-chapter p { font-size:15px; line-height:2.05; }
       .flight-chapter.is-active { transform:none; }
-      .mech-card { padding:23px 20px; min-height:0; }
       .spacex-reference { grid-column:auto; grid-template-columns:1fr; padding:22px; gap:20px; }
-      .spacex-reference-copy p { font-size:14px; line-height:2; }
+      .spacex-reference p { font-size:14px; }
+      .mech-card { padding:23px 20px; min-height:0; }
       .mech-card h3 { font-size:27px; }
       .mech-card p { font-size:13px; }
       .diagram { height:200px; margin-top:22px; }
@@ -434,20 +431,19 @@
           </article>
         </div>
       </div>
-        <aside class="spacex-reference reveal" aria-label="스페이스X 스타십 비행 영상">
-          <div class="spacex-reference-copy">
-            <div class="mech-tag" style="--accent:var(--tesla-accent)">SPACEX / STARSHIP</div>
-            <h3>지금 SpaceX가<br>만드는 비행체</h3>
-            <p>테슬라 로드스터에 SpaceX 기술을 활용했다는 발표가 나온 뒤, 시선을 현재 SpaceX의 비행체로 옮겨봅니다. 스타십은 우주 수송을 위해 개발 중인 재사용 우주선입니다.</p>
-            <p>2026년 9월 28일, 스타십은 14차 비행에서 처음 지구 궤도에 진입했습니다.</p>
-          </div>
-          <div class="spacex-media">
-            <div class="spacex-official-frame">
-              <iframe src="https://studio.x.com/embed/broadcast/1qxvvenMPMQxB" title="SpaceX 공식 Starship Flight 14 생중계" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <p class="media-caption"><a href="https://www.spacex.com/launches/starship-flight-14" target="_blank" rel="noopener"><b>SpaceX 공식 Starship Flight 14</b></a> · 2026년 9월 28일</p>
-          </div>
-        </aside>
+      <aside class="spacex-reference reveal" aria-label="SpaceX Starship Flight 14 공식 사진">
+        <div>
+          <div class="mech-tag" style="--accent:var(--tesla-accent)">SPACEX / STARSHIP</div>
+          <h3>로드스터에 담긴<br>SpaceX의 기술</h3>
+          <p>테슬라가 로드스터에 SpaceX 기술을 접목했다고 밝힌 가운데, SpaceX가 공개한 Starship Flight 14 사진을 함께 봅니다.</p>
+        </div>
+        <figure class="spacex-photo">
+          <a href="https://www.spacex.com/launches/starship-flight-14" target="_blank" rel="noopener" aria-label="SpaceX Starship Flight 14 공식 페이지 열기">
+            <img src="https://sxcontent9668.azureedge.us/cms-assets/assets/Flight_14_Thumbnail_3f1d08b0e6.png" alt="지구 궤도에서 촬영한 SpaceX Starship Flight 14 우주선">
+          </a>
+          <figcaption><a href="https://www.spacex.com/launches/starship-flight-14" target="_blank" rel="noopener">SpaceX 공식 사진 · Starship Flight 14</a> · 2026년 9월 28일</figcaption>
+        </figure>
+      </aside>
     </section>
 
     
@@ -461,7 +457,7 @@
   <footer class="source-footer">
     <div class="source-footer-inner">
       <div>원문 기사: <a href="https://view.asiae.co.kr/article/2026101611043600463" target="_blank" rel="noopener">아시아경제 · 오현길 기자</a> · <a href="https://www.asiae.co.kr/article/2026101919122751153" target="_blank" rel="noopener">아시아경제 · 임주형 기자</a></div>
-      <div>공식 설명: <a href="https://www.tesla.com/roadster" target="_blank" rel="noopener">Tesla Roadster</a> · <a href="https://www.spacex.com/vehicles/starship" target="_blank" rel="noopener">SpaceX Starship</a><br>영상 출처: <a href="https://www.youtube.com/watch?v=stmWapR3CWY" target="_blank" rel="noopener">Alef Aeronautics 공식 Roadster 비행 비교 영상 및 단계별 캡처</a> · <a href="https://www.youtube.com/watch?v=qt5p-_tE8d0&amp;t=376s&amp;end=478" target="_blank" rel="noopener">Tesla 공식 Roadster 시연 영상 (6분 16초부터)</a> · <a href="https://www.spacex.com/launches/starship-flight-14" target="_blank" rel="noopener">SpaceX 공식 Starship Flight 14 영상</a></div>
+      <div>공식 설명: <a href="https://www.tesla.com/roadster" target="_blank" rel="noopener">Tesla Roadster</a> · <a href="https://www.spacex.com/vehicles/starship" target="_blank" rel="noopener">SpaceX Starship</a><br>영상·사진 출처: <a href="https://www.youtube.com/watch?v=stmWapR3CWY" target="_blank" rel="noopener">Alef Aeronautics 공식 Roadster 비행 비교 영상 및 단계별 캡처</a> · <a href="https://www.youtube.com/watch?v=qt5p-_tE8d0&amp;t=376s&amp;end=478" target="_blank" rel="noopener">Tesla 공식 Roadster 시연 영상 (6분 16초부터)</a> · <a href="https://www.spacex.com/launches/starship-flight-14" target="_blank" rel="noopener">SpaceX 공식 Starship Flight 14 사진</a></div>
     </div>
   </footer>
   <script>

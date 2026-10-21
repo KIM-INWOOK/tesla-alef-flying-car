@@ -88,7 +88,10 @@
     .meme-tile:nth-child(7) { grid-column:span 6; --meme-accent:#c7a9dc; background:linear-gradient(145deg,#2a2233,#17191d); }
     .meme-media { position:relative; display:block; width:100%; aspect-ratio:16/10; overflow:hidden; background:#080a0b; border-bottom:1px solid rgba(255,255,255,.12); }
     .meme-media img, .meme-media video { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:contain; background:#080a0b; }
-    .meme-media video { z-index:1; }
+    .meme-media video { z-index:1; background:transparent; opacity:0; }
+    .meme-media video.is-ready { opacity:1; }
+    .meme-media .media-fallback { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#d8d8d8; font:600 15px/1.5 var(--sans); text-align:center; padding:20px; background:#151719; } 
+    .meme-media .media-fallback + img { z-index:1; }
     .meme-copy { position:relative; z-index:1; display:flex; flex:1; flex-direction:column; justify-content:space-between; padding:22px 24px 24px; }
     .text-meme { padding:24px; }
     .text-meme .meme-copy { padding:0; }
@@ -347,16 +350,18 @@
           </article>
           <article class="meme-tile reveal" data-number="06">
             <a class="meme-media" href="https://x.com/Weyne_west/status/2110932061934498014" target="_blank" rel="noopener" aria-label="Karani의 X 보험료 밈 영상 보기">
+              <span class="media-fallback">영상이 표시되지 않으면 눌러서 X 원문 보기 ↗</span>
               <img loading="lazy" src="https://pbs.twimg.com/tweet_video_thumb/HUuJeiiWAAAha0r?format=jpg&amp;name=large" alt="하늘 나는 차를 본 보험사의 반응을 패러디한 영상 장면">
-              <video autoplay muted loop playsinline preload="none" title="Karani가 올린 자동차 보험 밈 영상"><source src="https://video.twimg.com/tweet_video/HUuJeiiWAAAha0r.mp4" type="video/mp4"></video>
+              <video autoplay muted loop playsinline preload="metadata" title="Karani가 올린 자동차 보험 밈 영상"><source src="https://video.twimg.com/tweet_video/HUuJeiiWAAAha0r.mp4" type="video/mp4"></video>
             </a>
             <div class="meme-copy"><div><div class="meme-kind">06 · 보험료 걱정</div><h3>보험사는 벌써 계산 중</h3><p>비행까지 하는 차라면 보험료는 어떻게 될까, 현실적인 걱정도 따라붙었습니다.</p></div>
               <blockquote>“Cars insurers right now”<cite><a href="https://x.com/Weyne_west/status/2110932061934498014" target="_blank" rel="noopener">Karani (@Weyne_west) · X 원문 ↗</a></cite></blockquote></div>
           </article>
           <article class="meme-tile reveal" data-number="07">
             <a class="meme-media" href="https://x.com/real_safespaces/status/2110913124924887539" target="_blank" rel="noopener" aria-label="Safe Spaces의 X 영화 패러디 밈 영상 보기">
+              <span class="media-fallback">영상이 표시되지 않으면 눌러서 X 원문 보기 ↗</span>
               <img loading="lazy" src="https://pbs.twimg.com/tweet_video_thumb/HUt4S2KXUAAnIoU?format=jpg&amp;name=large" alt="하늘 나는 자동차를 영화 속 장면처럼 패러디한 밈 영상">
-              <video autoplay muted loop playsinline preload="none" title="Safe Spaces가 올린 영화 패러디 밈 영상"><source src="https://video.twimg.com/tweet_video/HUt4S2KXUAAnIoU.mp4" type="video/mp4"></video>
+              <video autoplay muted loop playsinline preload="metadata" title="Safe Spaces가 올린 영화 패러디 밈 영상"><source src="https://video.twimg.com/tweet_video/HUt4S2KXUAAnIoU.mp4" type="video/mp4"></video>
             </a>
             <div class="meme-copy"><div><div class="meme-kind">07 · 영화 소환</div><h3>“백 투 더 퓨처”가 현실로?</h3><p>하늘을 나는 자동차에 영화 속 드로리안도 다시 소환됐습니다.</p></div>
               <blockquote>미래로 가는 차가 드디어 현실에?<cite><a href="https://x.com/real_safespaces/status/2110913124924887539" target="_blank" rel="noopener">Safe Spaces (@real_safespaces) · X 원문 ↗</a></cite></blockquote></div>
@@ -431,19 +436,7 @@
           </article>
         </div>
       </div>
-      <aside class="spacex-reference reveal" aria-label="SpaceX Starship Flight 14 공식 사진">
-        <div>
-          <div class="mech-tag" style="--accent:var(--tesla-accent)">SPACEX / STARSHIP</div>
-          <h3>로드스터에 담긴<br>SpaceX의 기술</h3>
-          <p>테슬라가 로드스터에 SpaceX 기술을 접목했다고 밝힌 가운데, SpaceX가 공개한 Starship Flight 14 사진을 함께 봅니다.</p>
-        </div>
-        <figure class="spacex-photo">
-          <a href="https://www.spacex.com/launches/starship-flight-14" target="_blank" rel="noopener" aria-label="SpaceX Starship Flight 14 공식 페이지 열기">
-            <img src="https://sxcontent9668.azureedge.us/cms-assets/assets/Flight_14_Thumbnail_3f1d08b0e6.png" alt="지구 궤도에서 촬영한 SpaceX Starship Flight 14 우주선">
-          </a>
-          <figcaption><a href="https://www.spacex.com/launches/starship-flight-14" target="_blank" rel="noopener">SpaceX 공식 사진 · Starship Flight 14</a> · 2026년 9월 28일</figcaption>
-        </figure>
-      </aside>
+
     </section>
 
     
@@ -644,6 +637,7 @@
         .forEach(entry => setFlightMode(entry.target.dataset.mode));
     }, { threshold: [0.45, 0.7] });
     flightChapters.forEach(chapter => chapterObserver.observe(chapter));
+    document.querySelectorAll(".meme-media video").forEach(video => { video.addEventListener("loadeddata", () => video.classList.add("is-ready")); video.addEventListener("error", () => video.classList.remove("is-ready")); if (video.readyState >= 2) video.classList.add("is-ready"); });
     setTourStep(0);
 
 
